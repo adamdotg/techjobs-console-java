@@ -125,4 +125,20 @@ public class JobData {
         }
     }
 
+    // ----------- looks for search term in ALL columns ---------------
+    public static void findByValue(String searchTerm){
+      System.out.println("Is this what you're looking for: "+searchTerm);
+      // begining search and display loop
+      for (HashMap<String, String> term : allJobs ){
+        System.out.println("*****");
+        for (String key : term.keySet()) {
+            String value = term.get(key);
+            System.out.println(key+": "+"("+value+")");
+        }
+      }
+
+
+
+    }
+
 }
