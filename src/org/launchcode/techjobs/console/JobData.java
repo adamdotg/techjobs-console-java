@@ -126,19 +126,32 @@ public class JobData {
     }
 
     // ----------- looks for search term in ALL columns ---------------
-    public static void findByValue(String searchTerm){
-      System.out.println("Is this what you're looking for: "+searchTerm);
-      // begining search and display loop
-      for (HashMap<String, String> term : allJobs ){
-        System.out.println("*****");
-        for (String key : term.keySet()) {
-            String value = term.get(key);
-            System.out.println(key+": "+"("+value+")");
+    //    public static void findByValue(String searchTerm){
+    //    begining search and display loop
+
+    public static ArrayList<HashMap<String, String>> findByValue(String searchTerm) {
+
+        System.out.println("Is this what you're looking for: "+searchTerm);
+        // load data, if not already loaded
+        loadData();
+
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+        for (HashMap<String, String> row : allJobs) {
+
+            for(String key : row.keySet()){
+                String avalue = row.get(key);
+                if(avalue.toLowerCase().contains(searchTerm.toLowerCase())){
+                   jobs.add(row);
+                   break;
+                }
+            }
         }
-      }
-
-
-
+        System.out.println("returned");
+        System.out.println(jobs);
+        return jobs;
     }
 
 }
+
+
