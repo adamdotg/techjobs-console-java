@@ -50,6 +50,7 @@ public class TechJobs {
                     for (String item : results) {
                         System.out.println(item);
                     }
+                    System.out.println("\n"+"-----"+"\n"+"Total "+columnChoice+" results: "+results.size()+"\n"+"-----");
                 }
 
             } else { // choice is "search"
@@ -113,9 +114,9 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-        System.out.println(someJobs.size());
+        //System.out.println(someJobs.size());
       if (someJobs.isEmpty()){
-        System.out.println("Search term not found");
+        System.out.println("No Results");
         return; //stops method
       }
 
@@ -123,13 +124,14 @@ public class TechJobs {
             System.out.println("*****");
             for (String key : jobs.keySet()) {
                 String value = jobs.get(key);
-                System.out.println(key+": "+"("+value+")");
+                System.out.println(key+": "+value);
             }
+              System.out.println("*****"+"\n");
         }
 
 
 
-      System.out.println("\n"+"*****"+"\n"+someJobs.size()+" jobs available");
+      System.out.println("\n"+"-------------------"+"\n"+someJobs.size()+" jobs available"+"\n"+"-------------------");
 
     }
 
