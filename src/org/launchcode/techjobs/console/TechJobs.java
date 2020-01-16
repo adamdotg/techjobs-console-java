@@ -127,6 +127,8 @@ public class TechJobs {
             }
         }
 
+
+
       System.out.println("\n"+"*****"+"\n"+someJobs.size()+" jobs available");
 
     }

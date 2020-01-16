@@ -76,7 +76,7 @@ public class JobData {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            if (aValue.toLowerCase().contains(value.toLowerCase())) {
                 jobs.add(row);
             }
         }
@@ -126,8 +126,7 @@ public class JobData {
     }
 
     // ----------- looks for search term in ALL columns ---------------
-    //    public static void findByValue(String searchTerm){
-    //    begining search and display loop
+
 
     public static ArrayList<HashMap<String, String>> findByValue(String searchTerm) {
 
