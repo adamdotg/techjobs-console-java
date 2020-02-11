@@ -146,8 +146,7 @@ public class JobData {
                 }
             }
         }
-        System.out.println("returned");
-        System.out.println(jobs);
+
         return jobs;
     }
 
